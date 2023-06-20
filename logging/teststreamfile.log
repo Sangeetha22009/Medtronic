@@ -1,0 +1,2 @@
+2023-Jun-14 15:46:14 logging_module_handler  INFO: test info level with handler
+2023-Jun-14 15:46:14 logging_module_handler  WARNING: test warning level with handler
