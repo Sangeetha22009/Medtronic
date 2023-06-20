@@ -1,0 +1,6 @@
+2023-06-14 15:52:10,026 - child - INFO - This is an info message from the child logger
+2023-06-14 15:52:10,026 - child - WARNING - This is a warning message from the child logger
+2023-06-14 15:52:10,026 - root - INFO - This is an info message from the root logger
+2023-06-14 15:52:10,026 - root - WARNING - This is a warning message from the root logger
+2023-06-14 15:52:47,628 - root - INFO - This is an info message from the root logger
+2023-06-14 15:52:47,636 - root - WARNING - This is a warning message from the root logger
