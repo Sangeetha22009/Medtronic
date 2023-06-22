@@ -11,7 +11,7 @@ from fastapi.responses import RedirectResponse
 
 from schema import HookDataRequest
 from samples import cds_hook_sample
-from fastapi_basic import basic
+from cds_services.fastapi.fastapi_basic import basic
 
 description = """
 TEST CDS HOOK and FASTAPI basic. 🚀
