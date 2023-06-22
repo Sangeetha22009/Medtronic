@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="7" skipped="2" tests="25" time="0.102" timestamp="2023-06-20T00:12:26.629249" hostname="ubuntu-ThinkPad-E14-Gen-2"><testcase classname="test_app.TestApp" name="test_get_flowers" time="0.002" /><testcase classname="test_app.TestApp" name="test_create_flower" time="0.001" /><testcase classname="test_app.TestApp" name="test_get_flower" time="0.001" /><testcase classname="test_app.TestApp" name="test_get_flower_not_found" time="0.001" /><testcase classname="test_app.TestApp" name="test_update_flower" time="0.001" /><testcase classname="test_app.TestApp" name="test_update_flower_not_found" time="0.001" /><testcase classname="test_app.TestApp" name="test_delete_flower" time="0.001" /><testcase classname="test_app.TestApp" name="test_delete_flower_not_found" time="0.001" /><testcase classname="tests.test_basic.TestBasic" name="test_sqrt" time="0.000" /><testcase classname="tests.test_basic.TestBasic" name="testsquare" time="0.000"><failure message="assert (7 * 7) == 40">self = &lt;test_basic.TestBasic object at 0x7fb12d5de590&gt;
+
+    @pytest.mark.mytest
+    def testsquare(self):
+        num = 7
+&gt;       assert 7 * 7 == 40
+E       assert (7 * 7) == 40
+
+tests/test_basic.py:17: AssertionError</failure></testcase><testcase classname="tests.test_fixture_basic" name="test_divisible_by_3" time="0.000"><failure message="assert (38 % 3) == 0">input_value = 38
+
+    def test_divisible_by_3(input_value):
+&gt;       assert input_value % 3 == 0
+E       assert (38 % 3) == 0
+
+tests/test_fixture_basic.py:11: AssertionError</failure></testcase><testcase classname="tests.test_fixture_basic" name="test_divisible_by_6" time="0.000"><failure message="assert (38 % 6) == 0">input_value = 38
+
+    def test_divisible_by_6(input_value):
+&gt;       assert input_value % 6 == 0
+E       assert (38 % 6) == 0
+
+tests/test_fixture_basic.py:15: AssertionError</failure></testcase><testcase classname="tests.test_marker1" name="test_greater" time="0.000"><failure message="assert 100 &gt; 100">@pytest.mark.great
+    def test_greater():
+        num = 100
+&gt;       assert num &gt; 100
+E       assert 100 &gt; 100
+
+tests/test_marker1.py:7: AssertionError</failure></testcase><testcase classname="tests.test_marker1" name="test_greater_equal" time="0.000" /><testcase classname="tests.test_marker1" name="test_less" time="0.000" /><testcase classname="tests.test_marker2" name="test_sqrt" time="0.000" /><testcase classname="tests.test_marker2" name="testsquare" time="0.000"><failure message="assert (7 * 7) == 40">@pytest.mark.square
+    def testsquare():
+        num = 7
+&gt;       assert num * 7 == 40
+E       assert (7 * 7) == 40
+
+tests/test_marker2.py:14: AssertionError</failure></testcase><testcase classname="tests.test_marker2" name="test_equality" time="0.000"><failure message="assert 10 == 11">@pytest.mark.others
+    def test_equality():
+&gt;       assert 10 == 11
+E       assert 10 == 11
+
+tests/test_marker2.py:19: AssertionError</failure></testcase><testcase classname="tests.test_parameterizing" name="test_multiplication_11[1-11]" time="0.000" /><testcase classname="tests.test_parameterizing" name="test_multiplication_11[2-22]" time="0.000" /><testcase classname="tests.test_parameterizing" name="test_multiplication_11[3-35]" time="0.000"><failure message="assert (11 * 3) == 35">num = 3, output = 35
+
+    @pytest.mark.parametrize("num, output", [(1, 11), (2, 22), (3, 35), (4, 44)])
+    def test_multiplication_11(num, output):
+&gt;       assert 11 * num == output
+E       assert (11 * 3) == 35
+
+tests/test_parameterizing.py:6: AssertionError</failure></testcase><testcase classname="tests.test_parameterizing" name="test_multiplication_11[4-44]" time="0.000" /><testcase classname="tests.test_skip_xfail" name="test_greater" time="0.000"><skipped type="pytest.xfail" message="" /></testcase><testcase classname="tests.test_skip_xfail" name="test_greater_equal" time="0.000" /><testcase classname="tests.test_skip_xfail" name="test_less" time="0.000"><skipped type="pytest.skip" message="unconditional skip">/home/ubuntu/PycharmProjects/pytestwithflask/tests/test_skip_xfail.py:18: unconditional skip</skipped></testcase></testsuite></testsuites>
