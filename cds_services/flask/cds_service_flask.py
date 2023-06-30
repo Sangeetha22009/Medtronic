@@ -61,7 +61,13 @@ def cds_services():
                 "condition": "Condition?patient={{context.patientId}}",
                 "observation": "Observation?patient={{context.patientId}}"
             }
-        }
+        },
+            {
+                "id": "cms-price-check-lh",
+                "title": "CMS Pricing Service",
+                "description": "Determine if an authored prescription has a cheaper alternative to switch to and display pricing",
+                "hook": "order-select"
+            }
 
         ]
     }
@@ -118,6 +124,49 @@ def patient_view():
                         "type": 'smart'
                     }
 
+                ]
+            }
+        ]
+    }
+
+
+@app.route('/cds-services/cms-price-check-lh', methods=['POST'])
+@cross_origin()
+def cms_price_check():
+    hook_data = request.get_json()
+    print(hook_data)
+    details = ""
+    if "reasonCodeableConcept" in hook_data['context']['draftOrders']['entry'][0]['resource']:
+        details = f" - **Treating** - {hook_data['context']['draftOrders']['entry'][0]['resource']['reasonCodeableConcept']['text']}"
+
+    return {
+        "cards": [
+            {
+                "uuid": "3333eabe-e5a6-4942-8b01-eadf3f660a60",
+                "summary": f"Order Select: Test CDS",
+                "source": {
+                    "label": "TEST CDS SERVICES- Order Select"
+                },
+                "indicator": "info",
+                "detail": f" - An example order select hook \n\n"
+                          f"** -- Details**\n - Medication Order ID --> ** {hook_data['context']['draftOrders']['entry'][0]['resource']['id']}**\n\n"
+                          f"** -- Draft Orders**\n - **Status** - {hook_data['context']['draftOrders']['entry'][0]['resource']['status']}\n\n"
+                          f"{details if details else ''}\n\n"
+                          f" - **Date Written** - {hook_data['context']['draftOrders']['entry'][0]['resource']['dateWritten']}",
+                "suggestions": [
+                    {
+                        "label": "test suggestion",
+                        'uuid': "3333eabe-e5a6-4942-8b01-eadf3f660a6f",
+                        "actions": [
+                            {
+                                'type': 'delete',
+                                "description": "Test",
+                                "resource": {
+                                    "resourceType": "MedicationRequest"
+                                }
+                            }]
+
+                    }
                 ]
             }
         ]
